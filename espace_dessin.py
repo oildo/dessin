@@ -2,11 +2,11 @@ import pygame
 
 #-------------------------------------------------------------------------------
 NOIR = 0
-BLANC = 1
-ROUGE = 2
-VERT = 3
-BLEU = 4
-JAUNE = 5
+ROUGE = 1
+VERT = 2
+BLEU = 3
+JAUNE = 4
+BLANC = 5
 #-------------------------------------------------------------------------------
 
 class Tableau(pygame.Surface):
@@ -19,15 +19,15 @@ class Tableau(pygame.Surface):
         self.y = y
 
         self.noir = (0, 0, 0)           # 0
-        self.blanc = (255, 255, 255)    # 1
-        self.rouge = (255, 0, 0)        # 2
-        self.vert = (0, 255, 0)         # 3
-        self.bleu = (0, 0, 255)         # 4
-        self.jaune = (255, 255, 0)      # 5
+        self.rouge = (255, 0, 0)        # 1
+        self.vert = (0, 255, 0)         # 2
+        self.bleu = (0, 0, 255)         # 3
+        self.jaune = (255, 255, 0)      # 4
+        self.blanc = (255, 255, 255)    # 5
 
         self.couleur = [
-        self.noir, self.blanc, self.rouge,
-        self.vert, self.bleu, self.jaune
+        self.noir, self.rouge, self.vert,
+        self.bleu, self.jaune, self.blanc,
         ]
 
         self.couleur_fond = self.blanc

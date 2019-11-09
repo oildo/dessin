@@ -27,10 +27,10 @@ fenetre.fill(gris)
 tableau = Tableau(fenetre, marge, 0, dim_fenetre[0] - marge, dim_fenetre[1])
 
 # initialisation du Menu
-selec = Menu(fenetre, (0, 0, 0), 0, 0, marge, dim_fenetre[1])
+selec = Menu(fenetre, (42, 42, 42), 0, 0, marge, dim_fenetre[1])
 
 # initialisation des timers
-pygame.time.set_timer(DESSIN, 3)
+pygame.time.set_timer(DESSIN, 1)
 
 # rafraichissement de la fenetre
 pygame.display.flip()
@@ -53,21 +53,32 @@ while continuer:
                 tableau.remplir()
             if event.key == K_1:
                 tableau.select_color(NOIR)
+                selec.set_cursor(NOIR)
             if event.key == K_2:
                 tableau.select_color(ROUGE)
+                selec.set_cursor(ROUGE)
             if event.key == K_3:
                 tableau.select_color(VERT)
+                selec.set_cursor(VERT)
             if event.key == K_4:
                 tableau.select_color(BLEU)
+                selec.set_cursor(BLEU)
             if event.key == K_5:
                 tableau.select_color(JAUNE)
+                selec.set_cursor(JAUNE)
+
+
 
 
         if event.type == DESSIN:
             if pygame.mouse.get_pressed()[0]:
                 tableau.peindre((pygame.mouse.get_pos()[0] - marge, pygame.mouse.get_pos()[1]))
+                if not selec.which_case(pygame.mouse.get_pos()) == -1:
+                    tableau.select_color(selec.which_case(pygame.mouse.get_pos()))
+                    selec.set_cursor(selec.which_case(pygame.mouse.get_pos()))
             elif pygame.mouse.get_pressed()[2]:
                 tableau.gommer((pygame.mouse.get_pos()[0] - marge, pygame.mouse.get_pos()[1]))
+
 
 
 
