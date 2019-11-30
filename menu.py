@@ -24,7 +24,7 @@ class Menu(pygame.Surface):
 
         self.pointeur_couleur = (255, 255, 255)
 
-        self.selected = 2
+        self.selected = 0
         self.marge = 10
 
     def draw(self):

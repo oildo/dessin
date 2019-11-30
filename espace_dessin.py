@@ -27,7 +27,7 @@ class Tableau(pygame.Surface):
 
         self.couleur = [
         self.noir, self.rouge, self.vert,
-        self.bleu, self.jaune, self.blanc,
+        self.bleu, self.jaune, self.blanc, (0, 0, 0)
         ]
 
         self.couleur_fond = self.blanc
@@ -54,6 +54,9 @@ class Tableau(pygame.Surface):
 
     def select_color(self, indice_couleur):
         self.couleur_pinceau = self.couleur[indice_couleur]
+
+    def set_pers_color(self, color):
+        self.couleur[6] = color
 
 
 

@@ -66,6 +66,11 @@ while continuer:
             if event.key == K_5:
                 tableau.select_color(JAUNE)
                 selec.set_cursor(JAUNE)
+            if event.key == K_p:
+                tableau.set_pers_color((int(input("red : ")), \
+                    int(input("green : ")), int(input("blue : "))))
+                tableau.select_color(6)
+                selec.set_cursor(NOIR)
 
 
 
